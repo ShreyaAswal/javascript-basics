@@ -23,5 +23,5 @@ const obj2={
     age:22
 }; 
 //console.log(obj2[sym]);
-//console.log(typeof obj2[sym]);
+console.log(typeof obj2[sym]);
 
