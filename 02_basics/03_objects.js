@@ -3,6 +3,8 @@
 //singleton object- classes which can be instantiated once (has only one object), and can be accessed globally
 //whenever we create object through literals , the object created is not a singleton object
 
+//-----OBJECT LITERALS------
+
 const obj1={
     name:"shreya",
     "full name": "shreya aswal",
