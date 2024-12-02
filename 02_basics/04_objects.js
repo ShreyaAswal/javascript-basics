@@ -58,6 +58,11 @@ const obj3={
 const {coursename}=obj3 //destructuring of obj3
 //console.log(coursename);
 //we can also give some other name to coursename
-const {coursename:cn}=obj3
+const {coursename:cn}=obj3 //curly braces syntax=destructuring
 console.log(coursename,cn) //now we can access coursename as cn or coursename
 
+// {
+//     "name":"shreya",
+//     "age":19,
+//     "course":MCA
+// } //JSON format , in which we send or recieve data through api
