@@ -48,4 +48,16 @@ const arr=[
 //console.log(Object.entries(obj2)) //return array of each attribute as an indivual array
 //console.log(obj2.hasOwnProperty("name")) //return T/F whether the object has that property or not
 
+//-----destructuring of objects
+// if we want to use a property of an object again and again so rather than using dot notation or [] notation everytime, we destructure the object
+
+const obj3={
+    coursename:"js",
+    coursefees:999
+}
+const {coursename}=obj3 //destructuring of obj3
+//console.log(coursename);
+//we can also give some other name to coursename
+const {coursename:cn}=obj3
+console.log(coursename,cn) //now we can access coursename as cn or coursename
 
