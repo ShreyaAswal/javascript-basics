@@ -1,0 +1,25 @@
+const x=''
+if(x){
+    console.log('empty string executed')
+}
+
+const arr=[]
+if(arr){
+    console.log('empty arr executed')
+}
+
+const obj={}
+if(obj){
+    console.log('empty obj executed')
+}
+
+//falsy values ~ false,0,'',-0,BigInt i.e 0n, null, undefined,NaN
+//truthy values ~ true,"0","false"," ",[],{},empty function ~ function(){}
+
+//if we need to check if arr is empty or if the object is empty we do
+if(arr.length===0){
+    console.log('arr is empty')
+}
+if(Object.keys(obj).length===0){
+    console.log('obj is empty') //ass object.keys(obj)gives an empty arr and length of that arr ===0
+}
