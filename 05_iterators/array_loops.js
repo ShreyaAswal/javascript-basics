@@ -1,4 +1,4 @@
-//for of loop
+//for of loop-iterate directly on values of arr
 const arr=[1,2,3,4,5]
 
 for (const num of arr) {
@@ -18,7 +18,7 @@ for(const [key,val] of mp){
     //console.log(`key is ${key}, value is ${val}`)
 }
 
-//--- for of loop does not wor on object as object is not iterable
+//--- for of loop does not work on object as object is not iterable
 
 const obj={
     name:"shreya",
