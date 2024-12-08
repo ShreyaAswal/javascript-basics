@@ -1,0 +1,31 @@
+<!-- how to create element using js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Learning from chai or code</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">    
+</body>
+<script>
+    const div=document.createElement('div') //create any element whic we want in memory
+    console.log(div)
+    div.className='main' //set class as main
+    div.id=Math.round((Math.random()*10 + 1)) //set id randomly b/w 1 to 10
+
+    div.setAttribute('title','generate title') //set attribute 'title' as 'generate title' 
+   //div.setAttribute('class','another-class')
+    //className,id,innerText - first they fetch the prev values then they overwrite on the prev values,but 'setAttribute' directly set the values(more optimised)
+    div.style.backgroundColor="green"
+    div.style.padding='25px'
+    //div.innerText='Shreya learning JS from Chai Or Code'
+    const text=document.createTextNode('Shreya learning JS from Chai Or Code')
+    //console.log(text)
+    div.appendChild(text) //it will append the text node
+
+    //this div till now is in memory, we have to attach/append that div to the page
+    document.body.appendChild(div) //document->body->attach div on body
+
+</script>
+</html>
