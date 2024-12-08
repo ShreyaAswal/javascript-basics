@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+    <div class="parent">
+
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const div=document.querySelector('.parent')
+    // console.log(div)
+    // console.log(div.children) //gives an html collection of children of parent div
+
+    // for (let i = 0;i < div.children.length; i++) { //we can use basic loop on html collection
+    //     console.log(div.children[i].innerHTML)
+    //     div.children[i].innerHTML='hello'
+    // }
+    //console.log(div.firstElementChild) //gives first child element
+   // console.log(div.lastElementChild) //gives last child element
+    
+    const firstday=document.querySelector('.day') //selects monday
+    // console.log(firstday)
+    // console.log(firstday.parentElement) //gives parent of child
+    const daytwo=firstday.nextElementSibling
+    // console.log(daytwo) //gives next sibling i.e tuesday
+    // console.log(daytwo.previousElementSibling) //gives prev sibling i.e monday
+
+    //console.log('nodes:-',div.childNodes) //consider all the linebreak as childnodes as well, thus it will give 9 childnodes 
+
+    //after including one more line break
+      //console.log('nodes:-',div.childNodes)//again give 9 child nodes as it consider only one linebreak from the continous multiple line breaks
+
+    //after including comment
+      //console.log('nodes:-',div.childNodes)//now it gives 11 childnodes
+</script>
+</html>
