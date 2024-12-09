@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Edit or element through html</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addlist(langName){
+        const item=document.createElement('li')
+        //console.log(item)
+        item.innerHTML=langName //in this we have to traverse the whole tree
+        document.querySelector('.language').appendChild(item)
+    }
+    //addlist('python')
+    //addlist('typescript')
+
+    function addListOpt(langname){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        //console.log(li)
+        document.querySelector('.language').appendChild(li)
+    }
+    addListOpt('python')
+    addListOpt('typescript')
+    addListOpt('golang')
+
+    //----------edit values
+    //in queryselector, we use same syntax of css selectors
+
+    const secondValue=document.querySelector('li:nth-child(2)') //selecting the second value of li
+    //console.log(secondValue)
+    //secondValue.innerHTML='mojo' //value changed (but it is brute force way) Ist 
+    
+    //2nd way
+    const temp=document.createElement('li')
+    temp.appendChild(document.createTextNode('mojo'))
+    //secondValue.replaceWith(temp) //replacing the second list element with new list element
+
+    //3rd way
+    secondValue.outerHTML='<li>mojo</li>'
+
+    //-----------remove values
+    const valueToBeRemoved=document.querySelector('li:last-child')
+    valueToBeRemoved.remove() //remove the last list element
+</script>
+</html>
