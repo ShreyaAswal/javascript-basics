@@ -81,3 +81,82 @@ setInterval(()=>{
   clock.innerHTML=date.toLocaleTimeString()
 } ,1000)
 ```
+
+## project 4
+```javascript
+let num=Math.round((Math.random()*100+1))
+console.log(num)
+const submit=document.querySelector('#subt')
+const userinput=document.querySelector('#guessField')
+const prevguess=document.querySelector('.guesses')
+const rem=document.querySelector('.lastResult')
+const lowOrHigh=document.querySelector('.lowOrHi')
+
+let chance=10
+let lastGuesses=[]
+startGame()
+
+function startGame(){
+  submit.addEventListener('click', (e)=>{
+    e.preventDefault()
+    const guess=parseInt(userinput.value)
+    validateGuess(guess)
+  })
+}
+  
+function validateGuess(guess){
+  if(isNaN(guess) || guess<1 || guess>100){
+    lowOrHigh.innerHTML='please enter a valid number'
+  }
+  else checkGuess(guess)
+}
+
+function checkGuess(guess){
+  if(guess===num){
+    lowOrHigh.innerHTML='<h2>you guessed it RIGHT !!!!</h2>'
+    playGame=false
+    newGame()
+  }
+  else if(guess<num){
+    lowOrHigh.innerHTML='<h2>you guessed it TOOO low !!!!</h2>'
+    updateValues(guess);
+  }
+  else{
+    lowOrHigh.innerHTML='<h2>you guessed it TOOO high !!!!</h2>'
+    updateValues(guess);
+  }
+}
+
+function updateValues(guess){
+  chance--;
+  lastGuesses.push(guess)
+  userinput.value=''
+  prevguess.innerHTML+=`${guess}  `
+  rem.innerHTML=chance
+  if(chance==0)endGame()
+}
+
+function endGame(){
+  userinput.setAttribute('disabled','')
+  submit.value='Start new Game'
+  lowOrHigh.innerHTML='<h2>YOU LOST</h2>'
+  newGame()
+}
+
+function initial(){
+  userinput.removeAttribute('disabled')
+  userinput.value=''
+  submit.value='Submit guess'
+  lastGuesses=[]
+  chance=10
+  rem.innerHTML='10'
+  prevguess.innerHTML=''
+  num=Math.round((Math.random()*100+1))
+  console.log(num)
+  submit.removeEventListener('click',initial)
+  startGame()
+}
+function newGame(){
+  submit.addEventListener('click',initial)
+}
+```
