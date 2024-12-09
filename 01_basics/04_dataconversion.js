@@ -1,5 +1,5 @@
 let score=33
-console.log(typeof score) //number 
+//console.log(typeof score) //number 
 let s="33abc"
 let y=Number(s);
 console.log(typeof y) //number
