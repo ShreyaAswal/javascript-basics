@@ -19,44 +19,54 @@
    </div>
 </body>
 <script>
-    //onlick approach by using inline onclick is not good in JS for scalabale projects (REACT has diff scenario for scalable projects )
+    // //onlick approach by using inline onclick is not good in JS for scalabale projects (REACT has diff scenario for scalable projects )
 
-    // document.querySelector('#owl').onclick= function(){ //this method is also not good
-    //     alert('owl clicks') //
-    // }
+    // // document.querySelector('#owl').onclick= function(){ //this method is also not good
+    // //     alert('owl clicks') //
+    // // }
 
-    //attachEvent() function we used this func before addEventListner()
-    //jQuery- 'on' function we used in jQuery 
+    // //attachEvent() function we used this func before addEventListner()
+    // //jQuery- 'on' function we used in jQuery 
 
-    //--------event propagation has 2 types 1)event bubbling(inner to outer ex- li => ul => body)  2)event capturing(outer to inner ex->body =>ul =>li)
-    //by default the value of 3rd parameter is false(event bubbling)
+    // //--------event propagation has 2 types 1)event bubbling(inner to outer ex- li => ul => body)  2)event capturing(outer to inner ex->body =>ul =>li)
+    // //by default the value of 3rd parameter is false(event bubbling)
 
-    document.getElementById('owl').addEventListener('click',function(e){
-        console.log('owl clicked')
-    },false)// arguments-type,function to attach with element, event propagation (event bubbling(false) or event capturing (true))
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl clicked')
+    // },false)// arguments-type,function to attach with element, event propagation (event bubbling(false) or event capturing (true))
 
-    document.getElementById('images').addEventListener('click',function(e){
-        console.log('any ul element clicked')
-        //e.stopPropagation()//stops the propagation further
-    },true)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('any ul element clicked')
+    //     //e.stopPropagation()//stops the propagation further
+    // },true)
 
-    //in event bubbling (false) ->when we clicked owl first we get 'owl clicked' and then 'any ul element clicked'
-    //in event capturing (true) ->when we clicked on owl we get 'any ul element clicked' and then 'owl clicked'
+    // //in event bubbling (false) ->when we clicked owl first we get 'owl clicked' and then 'any ul element clicked'
+    // //in event capturing (true) ->when we clicked on owl we get 'any ul element clicked' and then 'owl clicked'
 
-    //---------imp event attributes
+    // //---------imp event attributes
 
-    document.querySelector('#river').addEventListener('click', (e)=>{
-        console.log(e)
+    // document.querySelector('#river').addEventListener('click', (e)=>{
+    //     console.log(e)
+    // })
+    // //types of events, timestamp ,preventDefault
+    // //in e object-> target,toElement, srcElement, currentTarget,clientX,clientY,screenX,screenY,altkey,ctrlkey,shiftkey,keyCode
+
+
+    // //-------preventDefault => it prevents the default behaviour of an html element (ex -> submission of 'form' on backend , or navigation through 'a' tag ) 
+
+    // document.getElementById('google').addEventListener('click', (e)=>{
+    //     console.log('google clicked')
+    //     e.preventDefault(); //stops the page to move on to google webpage
+    // })
+
+    const image=document.querySelector('#images').addEventListener('click',(e)=>{
+        if(e.target.tagName==='IMG'){
+            const li=e.target.parentNode
+            li.remove();  //first way
+            //li.parentNode.removeChild(li); second way
+        }
+        
     })
-    //types of events, timestamp ,preventDefault
-    //in e object-> target,toElement, srcElement, currentTarget,clientX,clientY,screenX,screenY,altkey,ctrlkey,shiftkey,keyCode
-
-
-    //-------preventDefault => it prevents the default behaviour of an html element (ex -> submission of 'form' on backend , or navigation through 'a' tag ) 
-
-    document.getElementById('google').addEventListener('click', (e)=>{
-        console.log('google clicked')
-        e.preventDefault(); //stops the page to move on to google webpage
-    })
+    
 </script>
 </html>
