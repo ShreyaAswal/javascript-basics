@@ -160,3 +160,28 @@ function newGame(){
   submit.addEventListener('click',initial)
 }
 ```
+## project 5
+```javascript
+function RandomColor(){
+  hex='0123456789ABCDEF'
+  let color='#'
+  for(let i=0;i<6;i++){
+    const idx=Math.round(Math.random()*15)
+    color+=hex[idx]
+  }
+  return color
+}
+let colorChange
+document.querySelector('#start').addEventListener('click', ()=>{
+  
+  colorChange=setInterval( ()=>{
+    const color=RandomColor()
+    document.body.style.backgroundColor=color
+    console.log('color change')
+  },1000)
+})
+document.querySelector('#stop').addEventListener('click',()=>{
+  console.log('color change stopped')
+  clearInterval(colorChange)
+})
+```
