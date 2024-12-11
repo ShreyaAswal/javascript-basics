@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai or Code</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //---setInterval------
+    //It is a method, which calls an API and perform a task repeatedly after each certain amount of time(repeadtedly does the task)
+    //---------clearInterval
+    //method to stop the setInterval
+    document.querySelector('#start').addEventListener('click',()=>{
+        const x = setInterval((i)=>{
+            console.log(`shreya,${Date.now()}`)
+        },1000,1) //after every 1 second , it will print 
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearInterval(x)
+        })
+    })
+</script>
+</html>
