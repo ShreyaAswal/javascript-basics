@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <h1>Shreya learning JS</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //----setTimeout()------
+    //It is a method, which calls an API and perform a task after certain time , i.e it performs a task only one time, after a certain time
+    const x='hello'
+    const changeHeading = setTimeout((x)=>{
+        document.querySelector('h1').innerHTML=`${x} Shreya, JS`
+    },2000,x) //changes h1 after 2 second // third argument is used to give parameter ,if any
+
+    //------clearTimeOut()-----------
+    //it is a method used to stop a timeout function, we have to give reference of that timeOut func as parameter
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeHeading)
+        console.log('stops heading to change')
+    })
+
+
+
+</script>
+</html>
