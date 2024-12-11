@@ -15,13 +15,14 @@
     //It is a method, which calls an API and perform a task repeatedly after each certain amount of time(repeadtedly does the task)
     //---------clearInterval
     //method to stop the setInterval
+    let x
     document.querySelector('#start').addEventListener('click',()=>{
-        const x = setInterval((i)=>{
+        x = setInterval((i)=>{
             console.log(`shreya,${Date.now()}`)
         },1000,1) //after every 1 second , it will print 
-        document.querySelector('#stop').addEventListener('click',()=>{
-            clearInterval(x)
-        })
+    })
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(x)
     })
 </script>
 </html>
