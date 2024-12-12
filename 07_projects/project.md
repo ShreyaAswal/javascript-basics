@@ -162,6 +162,30 @@ function newGame(){
 ```
 ## project 5
 ```javascript
+console.log('Project 5')
+const insert=document.querySelector('#insert')
+document.addEventListener('keydown',(e)=>{
+  const key=e.key
+  const code=e.code
+  insert.innerHTML=`
+  <div class="color">
+  <table>
+    <tr>
+      <th>key</th>
+      <th>code</th>
+    </tr>
+    <tr>
+      <th>${key==' '?'space':key}</th>
+      <th>${code}</th>
+    </tr>
+  </table>
+  </div>
+  `
+})
+```
+
+## project 6
+```javascript
 function RandomColor(){
   hex='0123456789ABCDEF'
   let color='#'
