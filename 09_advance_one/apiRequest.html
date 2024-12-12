@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cards {
+                max-width: 700px;
+                margin: 1em auto;
+
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+                grid-gap: 20px;
+        }
+        .card {
+                border: 1px solid #999;
+                border-radius: 3px;
+
+                display: grid;
+                grid-template-rows: max-content 200px 1fr;
+        }
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        p{
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <p>XMLHttpRequest- before fetch , we use this method to send and receive API.<br/>
+        XMLHttpRequest (XHR) objects are used to interact with servers <br>
+        You can retrieve data from a URL.It can be used to retrieve any type of data, not just XML. <br>
+    </p>
+    <p>States of request <br/>
+        0	UNSENT	                Client has been created. open() not called yet. <br>
+        1	OPENED	                open() has been called. <br>
+        2	HEADERS_RECEIVED	    send() has been called, and headers and status are available. <br>
+        3	LOADING	                Downloading; responseText holds partial data. <br>
+        4	DONE	                The operation is complete. <br>
+    </p>
+
+    <div id="cards">
+    </div>
+</body>
+<script>
+    const xhr=new XMLHttpRequest() //created XMLHttpRequest object
+    const reqURL= 'https://api.github.com/users/ShreyaAswal'
+    xhr.open('GET',reqURL) //req is ready to send ('method in which we are sending','URL')
+    xhr.send() //req is sent
+
+    // xhr.onreadystatechange= function(){ //onreadyStateChange takes a func and executes that func everytime the state gets changed
+    //     console.log(xhr.readyState)//gives the readystate of object
+
+    //     if(xhr.readyState===4){
+    //         const response=xhr.responseText
+    //         console.log(response)// we can also write this.readyState/this.responseText as xhr object is calling the func
+    //         //console.log(typeof response) //the type is string
+
+    //         //const data=JSON.parse(xhr.responseText) //convert string into JSON object
+    //         //console.log(typeof data)
+    //     }
+    // }
+
+    xhr.onreadystatechange= ()=>{
+        if(xhr.readyState===4){
+            const data=JSON.parse(xhr.responseText)
+            console.log(data)
+            const img=data.avatar_url
+            const followers= data.followers
+
+            document.querySelector('#cards').innerHTML=`<article class="card">
+                <img src=${img}>
+                <p>followers: ${followers}</p>
+                </article>`
+        }
+    
+    }
+</script>
+</html>
