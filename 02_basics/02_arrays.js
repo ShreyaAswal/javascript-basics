@@ -5,11 +5,13 @@ const arr3=["deshaw", "visa", "kla", "adobe"];
 const arr4=arr1.concat(arr2,arr3); //Combines two or more arrays. This method returns a new array without modifying any existing arrays.
 //console.log(arr1,arr4);
 
-//diff b/w spread operator and concat function is that, spread iterate over the string/array (not object) and then put it into the array
+//diff b/w spread operator and concat function is that, spread iterate over the string/array and then put it into the array
 
 const obj={name:"shreya",
     class:"mca"
 }
+console.log({...obj}) //spreading of object
+
 //const arr5=[...arr1,...arr2,...obj]; //spread operator
 //console.log(arr5); gives error
 
