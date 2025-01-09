@@ -10,7 +10,7 @@ const arr4=arr1.concat(arr2,arr3); //Combines two or more arrays. This method re
 const obj={name:"shreya",
     class:"mca"
 }
-console.log({...obj, id:"2345"}) //spreading of object
+console.log([{...obj, id:"2345"}]) //spreading of object
 
 //const arr5=[...arr1,...arr2,...obj]; //spread operator
 //console.log(arr5); gives error
